@@ -42,36 +42,6 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 }
 
-/*val githubProperties = Properties().apply {
-    load(FileInputStream(rootProject.file("github.properties")))
-}*/
-/*publishing {
-    publications {
-        create<MavenPublication>("release") {
-            groupId = "io.calcy.libraries" // Replace with your desired group ID
-            artifactId = "calculation_exp"  // Replace with your desired artifact ID
-            version = "1.0.0"              // Replace with your desired version
-
-            // Include the generated AAR file
-            afterEvaluate {
-                from(components["release"])
-            }
-        }
-    }
-*//*
-    repositories {
-        maven {
-            name = "GitHubPackages"
-
-            url = uri("https://maven.pkg.github.com/FsnDevil/calculation_exp")
-            credentials {
-                username = (githubProperties["gpr.usr"] ?: System.getenv("GPR_USER")).toString()
-                password = (githubProperties["gpr.key"] ?: System.getenv("GPR_API_KEY")).toString()
-            }
-        }
-    }*//*
-}*/
-
 afterEvaluate {
     publishing{
         publications {
