@@ -42,9 +42,9 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 }
 
-val githubProperties = Properties().apply {
+/*val githubProperties = Properties().apply {
     load(FileInputStream(rootProject.file("github.properties")))
-}
+}*/
 /*publishing {
     publications {
         create<MavenPublication>("release") {
