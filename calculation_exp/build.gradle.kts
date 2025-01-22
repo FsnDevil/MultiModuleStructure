@@ -1,7 +1,3 @@
-import io.netty.util.ReferenceCountUtil.release
-import java.io.FileInputStream
-import java.util.Properties
-
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
@@ -47,9 +43,21 @@ afterEvaluate {
         publications {
             create<MavenPublication>("release") {
                 from(components["release"])
-                groupId = "io.calcy.libraries" // Replace with your desired group ID
+                groupId = "io.calcy" // Replace with your desired group ID
                 artifactId = "calculation_exp"  // Replace with your desired artifact ID
-                version = "1.0.0"              // Replace with your desired version
+                version = "1.0.3"              // Replace with your desired version
+               // artifact("$buildDir/outputs/aar/calculation_exp-release.aar")
+            }
+        }
+
+        repositories {
+            maven {
+                name = "GithubPackages"
+                url = uri("https://maven.pkg.github.com/FsnDevil/MultiModuleStructure")
+                credentials {
+                    username = System.getenv("GITHUB_USER")
+                    password = System.getenv("GITHUB_TOKEN")
+                }
             }
         }
     }
